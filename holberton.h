@@ -15,6 +15,7 @@ typedef struct c
 	char *(*f)(va_list args);
 } c_t;
 int _printf(const char *format, ...);
+char *c_perc(va_list args);
 char *c_char2(char c);
 char *c_char(va_list args);
 char *c_string(va_list args);

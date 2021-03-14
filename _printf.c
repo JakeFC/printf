@@ -9,6 +9,7 @@
 int _printf(const char *format, ...)
 {
 	c_t type[] = {
+		{"%", c_perc},
 		{"c", c_char},
 		{"s", c_string},
 		{"i", c_int},
@@ -32,13 +33,6 @@ int _printf(const char *format, ...)
 					tmp = type[ti].f(args);
 					continue;
 				}
-			if (format[fi + 1] == '%')
-			{
-				tmp = malloc(sizeof(char) * 2);
-				tmp[0] = '%';
-				tmp[1] = 00;
-				fi++;
-			}
 		}
 		else
 			tmp = c_char2(format[fi]);
