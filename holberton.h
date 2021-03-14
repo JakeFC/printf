@@ -26,6 +26,7 @@ void _strcpy(char *dest, char *src);
 int _strlen(char *s);
 char *c_r(va_list args);
 char *c_rot(va_list args);
+void rev_string(char *s);
 /*
  * char *c_sort(char c, va_list args);
  */

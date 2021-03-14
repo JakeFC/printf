@@ -7,20 +7,11 @@
  */
 char *c_r(va_list args)
 {
-int len;
 char *s = va_arg(args, char *);
 char *sm = malloc(sizeof(s));
-char tmp;
-int i;
-int j;
+
 sm = _strcpy(sm, s);
-len = _strlen(sm);
-for (i = 0, j = (len - 1); i < j; j--, i++)
-{
-tmp = sm[i];
-sm[i] = sm[j];
-sm[j] = tmp;
-}
+rev_string(sm);
 return(sm);
 }
 
@@ -39,4 +30,27 @@ while (*(s + x) != '\0')
 x++;
 }
 return (x);
+}
+
+/**
+ * rev_string - reverses a string
+ * @s: string input
+ */
+void rev_string(char *s)
+{
+	int a, b, c;
+
+	a = 0;
+	while (*(s + a) != '\0')
+		a++;
+	a--;
+	b = 0;
+	while (b <= a / 2)
+	{
+		c = s[b];
+		s[b] = s[a - b];
+		s[a - b] = c;
+		b++;
+	}
+
 }
