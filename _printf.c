@@ -24,7 +24,7 @@ int _printf(const char *format, ...)
 		{"S", c_strung},
 		{"p", c_ptr},
 		{NULL, NULL}
-}
+	};
 	va_list args;
 	int fi, ti, Ti, bi = 0, total = 0;
 	char *tmp, *buf = malloc(sizeof(char) * 1024);
