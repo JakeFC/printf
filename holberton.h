@@ -22,6 +22,8 @@ char *c_string(va_list args);
 char *c_int(va_list args);
 char *c_bin(va_list args);
 char *_strcpy(char *dest, char *src);
+int _strlen(char *s);
+char *c_r(va_list args);
 /*
  * char *c_sort(char c, va_list args);
  */
