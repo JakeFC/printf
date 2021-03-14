@@ -18,5 +18,9 @@ int _printf(const char *format, ...);
 char *c_char2(char c);
 char *c_char(va_list args);
 char *c_string(va_list args);
+char *c_int(va_list args);
+/*
+ * char *c_sort(char c, va_list args);
+ */
 
 #endif
