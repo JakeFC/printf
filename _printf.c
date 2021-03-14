@@ -17,8 +17,14 @@ int _printf(const char *format, ...)
 		{"b", c_bin},
 		{"r", c_r},
 		{"R", c_rot},
+		("u", c_uns},
+		{"o", c_oct},
+		{"x", c_hex},
+		{"X", c_HEX},
+		{"S", c_strung},
+		{"p", c_ptr},
 		{NULL, NULL}
-};
+}
 	va_list args;
 	int fi, ti, Ti, bi = 0, total = 0;
 	char *tmp, *buf = malloc(sizeof(char) * 1024);
