@@ -16,6 +16,7 @@ int _printf(const char *format, ...)
 		{"d", c_int},
 		{"b", c_bin},
 		{"r", c_r},
+		{"R", c_rot},
 		{NULL, NULL}
 };
 	va_list args;
@@ -37,7 +38,7 @@ int _printf(const char *format, ...)
 		}
 		else
 			tmp = c_char2(format[fi]);
-		if ((bi + sizeof(tmp)) > 1024)
+		if ((bi + _strlen(tmp)) > 1024)
 		{
 			write(1, buf, bi);
 			bi = 0;
