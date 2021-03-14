@@ -10,7 +10,7 @@ char *c_r(va_list args)
 char *s = va_arg(args, char *);
 char *sm = malloc(sizeof(s));
 
-sm = _strcpy(sm, s);
+_strcpy(sm, s);
 rev_string(sm);
 return(sm);
 }
