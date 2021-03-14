@@ -1,5 +1,4 @@
 #include "holberton.h"
-#include <stdarg.h>
 
 /**
  * c_char - converts a char to string

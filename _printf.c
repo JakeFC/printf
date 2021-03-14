@@ -1,6 +1,3 @@
-#include <stdio.h>
-#include <stdlib.h>
-#include <stdarg.h>
 #include <unistd.h>
 #include "holberton.h"
 
@@ -16,6 +13,7 @@ int _printf(const char *format, ...)
 		{"s", c_string},
 		{"i", c_int},
 		{"d", c_int},
+		{"b", c_bin},
 		{NULL, NULL}
 	};
 	va_list args;
@@ -35,7 +33,12 @@ int _printf(const char *format, ...)
 					continue;
 				}
 			if (format[fi + 1] == '%')
-				tmp = "%";
+			{
+				tmp = malloc(sizeof(char) * 2);
+				tmp[0] = '%';
+				tmp[1] = 00;
+				fi++;
+			}
 		}
 		else
 			tmp = c_char2(format[fi]);
@@ -46,7 +49,7 @@ int _printf(const char *format, ...)
 		}
 		for (Ti = 0; tmp[Ti]; bi++, Ti++, total++)
 			buf[bi] = tmp[Ti];
-		tmp = NULL;
+		free(tmp);
 	}
 	write(1, buf, bi);
 	free(buf);

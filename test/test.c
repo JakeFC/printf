@@ -2,9 +2,7 @@
 
 void main()
 {
-	char s = '0';
-	unsigned char us = '0';
+	int i = 1 % 2;
 
-	printf("%d\n", s);
-	printf("%d\n", us);
+	printf("%d\n", i);
 }
