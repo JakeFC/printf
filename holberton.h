@@ -27,8 +27,16 @@ int _strlen(char *s);
 char *c_r(va_list args);
 char *c_rot(va_list args);
 void rev_string(char *s);
+char *c_uns(va_list args);
+char *c_oct(va_list args);
+char *c_hex(va_list args);
+char *c_HEX(va_list args);
+char *c_strung(va_list args);
+char *c_ptr(va_list args);
+
 /*
  * char *c_sort(char c, va_list args);
  */
 
 #endif
+S
