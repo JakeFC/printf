@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 	}
 	for (fi = 0; format[fi]; fi++)
 	{
-		if (args && format[fi] == '%')
+		if (format[fi] == '%')
 		{
 			tmp = c_sort(format[++fi], args);
 			if (!tmp)
