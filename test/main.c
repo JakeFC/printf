@@ -46,7 +46,10 @@ int main()
         len2 = printf("Let's try to printf a simple sentence.\n");
         _printf("Length:[%d, %i]\n", len, len);
         _printf("Length:[%d, %i]\n", len2, len2);
-	_printf("%s\n", 'h');
-        _printf("%\n", "hello");
+	_printf("");
+/*	_printf("%s\n");
+ *	printf("%s\n", 'h');
+ *	_printf("%s\n", 'h');
+ *      _printf("%\n", "hello");*/
 	return (0);
 }

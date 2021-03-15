@@ -2,6 +2,7 @@
 
 /**
  * c_sort - pairs a conversion character with a conversion function and runs it
+ * @fc: format character
  * @args: list input
  * Return: the converted function
  */
@@ -33,5 +34,5 @@ char *c_sort(char fc, va_list args)
 			tmp = type[ti].f(args);
 			return (tmp);
 		}
-	return (NULL);
+	return (c_percx(fc));
 }

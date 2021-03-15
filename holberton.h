@@ -36,6 +36,8 @@ char *c_strung(va_list args);
 char *c_hexcel(int n);
 char *c_ptr(va_list args);
 char *c_sort(char fc, va_list args);
+char *c_percx(char fc);
+void cleanup(char *buf, va_list args);
 /*
  * char *c_sort(char c, va_list args);
  */

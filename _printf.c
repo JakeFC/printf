@@ -13,14 +13,21 @@ int _printf(const char *format, ...)
 	char *tmp, *buf = malloc(sizeof(char) * 1024);
 
 	va_start(args, format);
-	for (fi = 0; format && format[fi]; fi++)
+	if (!format)
+	{
+		cleanup(buf, args);
+		return (-1);
+	}
+	for (fi = 0; format[fi]; fi++)
 	{
 		if (format[fi] == '%')
 		{
-			tmp = c_sort(format[fi + 1], args);
-					fi++;
-					if (!tmp)
-						exit(-1);
+			tmp = c_sort(format[++fi], args);
+			if (!tmp)
+			{
+				cleanup(buf, args);
+				return (-1);
+			}
 		}
 		else
 			tmp = c_char2(format[fi]);
@@ -36,7 +43,17 @@ int _printf(const char *format, ...)
 		free(tmp);
 	}
 	write(1, buf, bi);
+	cleanup(buf, args);
+	return (total);
+}
+/**
+ * cleanup - frees the buffer and ends the va_list
+ * @buf: buffer pointer
+ * @args: va list
+ * description: because betty
+ */
+void cleanup(char *buf, va_list args)
+{
 	free(buf);
 	va_end(args);
-	return (total);
 }
