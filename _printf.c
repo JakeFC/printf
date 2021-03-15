@@ -17,6 +17,12 @@ int _printf(const char *format, ...)
 		{"b", c_bin},
 		{"r", c_r},
 		{"R", c_rot},
+		{"u", c_uns},
+		{"o", c_oct},
+		{"x", c_hex},
+		{"X", c_HEX},
+		{"S", c_strung},
+		{"p", c_ptr},
 		{NULL, NULL}
 };
 	va_list args;
@@ -38,13 +44,15 @@ int _printf(const char *format, ...)
 		}
 		else
 			tmp = c_char2(format[fi]);
-		if ((bi + _strlen(tmp)) > 1024)
-		{
-			write(1, buf, bi);
-			bi = 0;
-		}
 		for (Ti = 0; tmp[Ti]; bi++, Ti++, total++)
+		{
 			buf[bi] = tmp[Ti];
+			if (bi == 1024)
+			{
+				bi = 0;
+				write(1, buf, bi);
+			}
+		}
 		free(tmp);
 	}
 	write(1, buf, bi);
