@@ -1,0 +1,47 @@
+.TH man_3_printf 1
+.SH NAME
+printf - Print and format data to the standard output
+.SH SYNOPSIS
+.B printf
+[\fB\-\-FORMAT\fR]
+[\fB\-\-ARGUMENT\fR]
+.SH DESCRIPTION
+.B printf
+print a series of characters, commands, or variables based on input. The input you use will be converted into a string and then fed the corresponding data types. The string will then be transmogrified to fit the output's specifications.
+.SH
+.TP
+.BR \-b ", "\fR
+Unsigned int is converted to binary
+.BR \-d ", " \-i ","\fR
+Int is converted into signed decimal notation
+.BR \-o ", " \-u "," \-x ", " \-X ","\fR
+Int is converted into unsigned octal (o), unsigned decimal(u), or unsigned hexadecimal(x, X) notation. Capital letters are used in hex with the uppercase X.
+.BR \-p ", "\fR
+Void * pointer argument is printed into hexadecimal
+.BR \-r ", "\fR
+String is printed in reverse
+.BR \-R ", "\fR
+String is converted into ROT13 encryption
+.BR \-S ", "\fR
+All ASCII values outside of 32 through 126 are converted to hex and output following a "\x"
+.BR \-% ", "\fR
+A "%" is written. Nothing is converted.
+.SH EXAMPLES
+To write some text to the standard output, use the
+.BR printf (1)
+command:
+.PP
+.nf
+.RS
+printf "this is a %s format %s\n" \\
+womp womp womp
+.RE
+.fi
+.PP
+.SH AUTHORS
+.B
+.PP jacobchavera@yahoo.com
+.PP christopher.caswell@rocketmail.com
+.SH COPYRIGHT
+.B None
+Please don't steal. It's uncouth behavior.
