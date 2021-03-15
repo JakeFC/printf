@@ -2,5 +2,5 @@
 
 void main()
 {
-	printf("%1%\n");
+	printf("%s\n", 'c');
 }

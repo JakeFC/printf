@@ -7,9 +7,13 @@
  */
 char *c_char(va_list args)
 {
-	char *s = malloc(sizeof(char) * 2);
+	char *s;
+	char c = va_arg(args, int);
 
-	s[0] = (char)va_arg(args, int);
+	if (!c)
+		return (NULL);
+	s = malloc(sizeof(char) * 2);
+	s[0] = c;
 	s[1] = 00;
 	return (s);
 }
