@@ -49,7 +49,9 @@ int main()
 	_printf("");
 	_printf("Unknown:[%w]test\n");
 	printf("Unknown:[%w]test\n");
-/*	_printf("Unknown:[%r]test\n");
+	_printf("%");
+/*	printf("%\n");
+ *	_printf("Unknown:[%r]test\n");
  *      printf("Unknown:[%r]test\n");
  *	_printf("%s\n");
  *	printf("%s\n", 'h');
