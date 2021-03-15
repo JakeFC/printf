@@ -20,7 +20,7 @@ int _printf(const char *format, ...)
 			tmp = c_sort(format[fi + 1], args);
 					fi++;
 					if (!tmp)
-						exit(1);
+						exit(-1);
 		}
 		else
 			tmp = c_char2(format[fi]);
