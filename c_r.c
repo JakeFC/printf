@@ -7,12 +7,12 @@
  */
 char *c_r(va_list args)
 {
-char *s = va_arg(args, char *);
-char *sm = malloc(sizeof(s));
+	char *s = va_arg(args, char *);
+	char *sm = malloc(sizeof(s));
 
-sm = _strcpy(sm, s);
-rev_string(sm);
-return(sm);
+	_strcpy(sm, s);
+	rev_string(sm);
+	return (sm);
 }
 
 /**
@@ -23,13 +23,14 @@ return(sm);
  */
 int _strlen(char *s)
 {
-int x;
-x = 0;
-while (*(s + x) != '\0')
-{
-x++;
-}
-return (x);
+	int x;
+
+	x = 0;
+	while (*(s + x) != '\0')
+	{
+		x++;
+	}
+	return (x);
 }
 
 /**

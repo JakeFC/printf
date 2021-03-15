@@ -23,6 +23,7 @@ char *c_string(va_list args);
 char *c_int(va_list args);
 char *c_bin(va_list args);
 void _strcpy(char *dest, char *src);
+void _strcpyx(char *dest, char *src);
 int _strlen(char *s);
 char *c_r(va_list args);
 char *c_rot(va_list args);
@@ -32,11 +33,10 @@ char *c_oct(va_list args);
 char *c_hex(va_list args);
 char *c_HEX(va_list args);
 char *c_strung(va_list args);
+char *c_hexcel(int n);
 char *c_ptr(va_list args);
-
 /*
  * char *c_sort(char c, va_list args);
  */
 
 #endif
-S
