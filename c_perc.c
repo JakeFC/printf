@@ -2,7 +2,7 @@
 
 /**
  * c_perc - prints a % symbol
- * @arg: completely ignored
+ * @args: completely ignored
  * Return: % as a string
  */
 char *c_perc(va_list args)

@@ -11,5 +11,5 @@ char *c_char(va_list args)
 
 	s[0] = (char)va_arg(args, int);
 	s[1] = 00;
-	return(s);
+	return (s);
 }
