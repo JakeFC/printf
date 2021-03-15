@@ -34,5 +34,6 @@ char *c_sort(char fc, va_list args)
 			tmp = type[ti].f(args);
 			return (tmp);
 		}
-	return (c_percx(fc));
+	tmp = c_percx(fc);
+	return (tmp);
 }

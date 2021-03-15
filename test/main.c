@@ -47,6 +47,10 @@ int main()
         _printf("Length:[%d, %i]\n", len, len);
         _printf("Length:[%d, %i]\n", len2, len2);
 	_printf("");
+	_printf("Unknown:[%w]test\n");
+	printf("Unknown:[%w]test\n");
+	_printf("Unknown:[%r]test\n");
+        printf("Unknown:[%r]test\n");
 /*	_printf("%s\n");
  *	printf("%s\n", 'h');
  *	_printf("%s\n", 'h');

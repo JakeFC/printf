@@ -8,8 +8,11 @@
 char *c_r(va_list args)
 {
 	char *s = va_arg(args, char *);
-	char *sm = malloc(sizeof(s));
+	char *sm;
 
+	if (!s)
+		return (NULL);
+	sm = malloc(sizeof(*s));
 	_strcpy(sm, s);
 	rev_string(sm);
 	return (sm);

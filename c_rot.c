@@ -9,7 +9,7 @@ char *c_rot(va_list args)
 {
 
 char *s = va_arg(args, char *);
-char *sm = malloc(sizeof(s) * 6);
+char *sm = malloc(sizeof(*s));
 
 _strcpy(sm, s);
 

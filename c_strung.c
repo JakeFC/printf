@@ -34,8 +34,11 @@ void _strcpyx(char *dest, char *src)
 char *c_strung(va_list args)
 {
 	char *s = va_arg(args, char *);
-	char *sm = malloc(sizeof(s) * 4);
+	char *sm;
 
+	if (!s)
+		return (NULL);
+	sm = malloc(sizeof(*s) * 4);
 	_strcpyx(sm, s);
 	return (sm);
 }

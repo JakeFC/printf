@@ -25,7 +25,7 @@ char *c_string(va_list args)
 
 	if (!s)
 		return (NULL);
-	sm = malloc(sizeof(s));
+	sm = malloc(sizeof(*s));
 	_strcpy(sm, s);
 	return (sm);
 }
