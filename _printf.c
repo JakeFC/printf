@@ -26,6 +26,7 @@ int _printf(const char *format, ...)
 			if (!tmp)
 			{
 				cleanup(buf, args, bi);
+				free(buf);
 				return (-1);
 			}
 		}
@@ -40,6 +41,7 @@ int _printf(const char *format, ...)
 		free(tmp);
 	}
 	cleanup(buf, args, bi);
+	free(buf);
 	return (total);
 }
 /**
@@ -52,6 +54,5 @@ int _printf(const char *format, ...)
 void cleanup(char *buf, va_list args, int bi)
 {
 	write(1, buf, bi);
-	free(buf);
 	va_end(args);
 }

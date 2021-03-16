@@ -46,7 +46,7 @@ char *c_sort(const char *format, int *fi, va_list args)
 			return (tmp);
 		}
 	*fi -= increments;
-	if (format[*fi])
+	if (format[*fi] && format[*fi + increments])
 		return (c_percx(format[*fi]));
 	return (NULL);
 }

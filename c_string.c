@@ -24,7 +24,10 @@ char *c_string(va_list args)
 	char *sm;
 
 	if (!s)
+	{
+		_puts("(null)");
 		return (NULL);
+	}
 	sm = malloc(sizeof(*s));
 	_strcpy(sm, s);
 	return (sm);

@@ -14,6 +14,8 @@ typedef struct c
 	char *t;
 	char *(*f)(va_list args);
 } c_t;
+int _putchar(char c);
+void _puts(char *str);
 int _printf(const char *format, ...);
 char *c_perc(va_list args);
 char *c_char2(char c);
