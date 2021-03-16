@@ -55,6 +55,6 @@ int _printf(const char *format, ...)
 void cleanup(char *buf, va_list args, int bi)
 {
 	write(1, buf, bi);
-        free(buf);
-        va_end(args);
+	free(buf);
+	va_end(args);
 }

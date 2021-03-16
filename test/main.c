@@ -53,9 +53,9 @@ int main()
 	putchar('\n');
 	printf("backslash:\\");
 	putchar('\n');
-	len = _printf("percent: %w");
+	len = _printf("percent: %");
 	puts("");
-	len2 = printf("percent: %w");
+	len2 = printf("percent: %");
 	puts("");
 	_printf("Length:[%d, %i]\n", len, len);
         _printf("Length:[%d, %i]\n", len2, len2);
