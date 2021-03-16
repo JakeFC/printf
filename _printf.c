@@ -13,19 +13,19 @@ int _printf(const char *format, ...)
 	char *tmp, *buf = malloc(sizeof(char) * 1024);
 
 	va_start(args, format);
-	if (!format)
+	if (!format || !format[0])
 	{
-		cleanup(buf, args);
+		cleanup(buf, args, bi);
 		return (-1);
 	}
 	for (fi = 0; format[fi]; fi++)
 	{
-		if (format[fi + 1] && format[fi] == '%')
+		if (format[fi] == '%')
 		{
 			tmp = c_sort(format, &fi, args);
 			if (!tmp)
 			{
-				cleanup(buf, args);
+				cleanup(buf, args, bi);
 				return (-1);
 			}
 		}
@@ -42,18 +42,19 @@ int _printf(const char *format, ...)
 		}
 		free(tmp);
 	}
-	write(1, buf, bi);
-	cleanup(buf, args);
+	cleanup(buf, args, bi);
 	return (total);
 }
 /**
- * cleanup - frees the buffer and ends the va_list
+ * cleanup - writes and frees the buffer and ends the va_list
  * @buf: buffer pointer
  * @args: va list
+ * @bi: current buffer index
  * description: because betty
  */
-void cleanup(char *buf, va_list args)
+void cleanup(char *buf, va_list args, int bi)
 {
-	free(buf);
-	va_end(args);
+	write(1, buf, bi);
+        free(buf);
+        va_end(args);
 }

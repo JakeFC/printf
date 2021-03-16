@@ -31,7 +31,7 @@ char *c_sort(const char *format, int *fi, va_list args)
 	char flagseen[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 	*fi += 1;
-	for (Fi = 0, increments = 0; flag[Fi] != 00 && format[*fi] != 00; Fi++)
+	for (Fi = 0, increments = 0; flag[Fi] && format[*fi]; Fi++)
 		if ((format[*fi] == flag[Fi]) && (flagseen[Fi] != '1'))
 		{
 			flagseen[Fi] = '1';
@@ -46,5 +46,7 @@ char *c_sort(const char *format, int *fi, va_list args)
 			return (tmp);
 		}
 	*fi -= increments;
-	return (c_percx(format[*fi]));
+	if (format[*fi])
+		return (c_percx(format[*fi]));
+	return (NULL);
 }

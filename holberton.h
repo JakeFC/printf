@@ -37,7 +37,7 @@ char *c_hexcel(int n);
 char *c_ptr(va_list args);
 char *c_sort(const char *format, int *fi, va_list args);
 char *c_percx(char fc);
-void cleanup(char *buf, va_list args);
+void cleanup(char *buf, va_list args, int bi);
 /*
  * char *c_sort(char c, va_list args);
  */
