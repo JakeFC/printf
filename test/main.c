@@ -74,7 +74,21 @@ int main()
 	_printf("%0-3d\n", 3);
  	_printf("% s\n", "space");
  	_printf("%  s\n", "too many space");
-/*	printf("%\n");
+	len = _printf("");
+	len2 = printf("");
+	_printf("Length:[%d, %i]\n", len, len);
+        printf("Length:[%d, %i]\n", len2, len2);
+	printf("Maths: %d\n", 2 + 2);
+	_printf("Maths: %d\n", 2 + 2);
+	printf("%d, %i, %o, %b, %x, %X, %u\n", 16, 16, 16, 16, 16, 16, 16);
+		printf("%s, %c, %p\n", "sixteen", 'c', addr);
+		_printf("%d, %i, %o, %b, %x, %X, %u\n", 16, 16, 16, 16, 16, 16, 16);
+		_printf("%s, %S, %c\n", "sixteen", "six\nteen", 'c');
+		_printf("%r\n", "sixteen");
+		_printf("%R\n", "sixteen");
+		_printf("%p\n", addr);
+		_printf("%r, %R, %p\n", "sixteen", "sixteen", addr);
+/*
  *	_printf("Unknown:[%r]test\n");
  *      printf("Unknown:[%r]test\n");
  *	_printf("%s\n");

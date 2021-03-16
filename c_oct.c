@@ -8,16 +8,16 @@
 char *c_oct(va_list args)
 {
 	char *s = malloc(sizeof(char) * 16);
-	int i = 0, ri, check = 0;
+	int i = 0, ri;
 	char tmp;
 	unsigned int n = va_arg(args, unsigned int);
 
 	s[i] = 00;
+	if (n == 0)
+		s[++i] = 48;
 	for (i++; n != 0; n /= 8, i++)
 		s[i] = (n % 8) + 48;
 	i--;
-	if (check == 1)
-		s[++i] = '-';
 	for (ri = 0; ri <= i; ri++, i--)
 	{
 		tmp = s[ri];

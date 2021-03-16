@@ -9,11 +9,11 @@
 int _printf(const char *format, ...)
 {
 	va_list args;
-	int fi, Ti, bi = 0, total = 0;
+	int fi = 0, Ti, bi = 0, total = 0;
 	char *tmp, *buf = malloc(sizeof(char) * 1024);
 
 	va_start(args, format);
-	if (!format || !format[0])
+	if (!format)
 	{
 		cleanup(buf, args, bi);
 		return (-1);
@@ -35,10 +35,7 @@ int _printf(const char *format, ...)
 		{
 			buf[bi] = tmp[Ti];
 			if (bi == 1024)
-			{
-				write(1, buf, bi);
-				bi = -1;
-			}
+				write(1, buf, bi), bi = -1;
 		}
 		free(tmp);
 	}
