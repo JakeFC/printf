@@ -22,7 +22,7 @@ int _printf(const char *format, ...)
 	{
 		if (format[fi + 1] && format[fi] == '%')
 		{
-			tmp = c_sort(format[++fi], args);
+			tmp = c_sort(format, &fi, args);
 			if (!tmp)
 			{
 				cleanup(buf, args);

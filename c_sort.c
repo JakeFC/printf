@@ -2,11 +2,12 @@
 
 /**
  * c_sort - pairs a conversion character with a conversion function and runs it
- * @fc: format character
+ * @format: format string
+ * @fi: format index address
  * @args: list input
  * Return: the converted function
  */
-char *c_sort(char fc, va_list args)
+char *c_sort(const char *format, int *fi, va_list args)
 {
 	c_t type[] = {
 		{"%", c_perc},
@@ -25,15 +26,25 @@ char *c_sort(char fc, va_list args)
 		{"p", c_ptr},
 		{NULL, NULL}
 	};
-	int ti;
-	char *tmp;
+	int ti, Fi, increments = 0;
+	char *tmp, *flag = "+ #lh.0-123456789";
+	char flagseen[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
-	for (ti = 0; type[ti].t; ti++)
-		if (fc == type[ti].t[0])
+	*fi += 1;
+	for (Fi = 0, increments = 0; flag[Fi] != 00 && format[*fi] != 00; Fi++)
+		if ((format[*fi] == flag[Fi]) && (flagseen[Fi] != '1'))
+		{
+			flagseen[Fi] = '1';
+			*fi += 1;
+			increments++;
+			Fi = -1;
+		}
+	for (ti = 0; type[ti].t && format[*fi]; ti++)
+		if (format[*fi] == type[ti].t[0])
 		{
 			tmp = type[ti].f(args);
 			return (tmp);
 		}
-	tmp = c_percx(fc);
-	return (tmp);
+	*fi -= increments;
+	return (c_percx(format[*fi]));
 }
