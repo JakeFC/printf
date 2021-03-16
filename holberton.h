@@ -4,6 +4,7 @@
 #include <stdio.h>
 #include <stdarg.h>
 #include <stdlib.h>
+#include <unistd.h>
 /**
  * struct c - pairs a format identifier with a conversion function
  * @t: format identifier
