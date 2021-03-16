@@ -1,11 +1,11 @@
 #include "holberton.h"
 
 /**
- * c_r - returns a string
+ * c_rev - returns a reversed string
  * @args: list input
  * Return: the string
  */
-char *c_ret(va_list args)
+char *c_rev(va_list args)
 {
 	char *s = va_arg(args, char *);
 	char *sm;

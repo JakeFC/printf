@@ -16,7 +16,7 @@ char *c_sort(const char *format, int *fi, va_list args)
 		{"i", c_int},
 		{"d", c_int},
 		{"b", c_bin},
-		{"r", c_r},
+		{"r", c_rev},
 		{"R", c_rot},
 		{"u", c_uns},
 		{"o", c_oct},
