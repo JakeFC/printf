@@ -13,6 +13,8 @@ char *c_rev(va_list args)
 	if (!s)
 		return (NULL);
 	sm = malloc(sizeof(*s));
+	if (!sm)
+		return (NULL);
 	_strcpy(sm, s);
 	rev_string(sm);
 	return (sm);

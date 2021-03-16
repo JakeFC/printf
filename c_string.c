@@ -29,6 +29,11 @@ char *c_string(va_list args)
 		return (NULL);
 	}
 	sm = malloc(sizeof(*s));
+	if (!sm)
+	{
+		_puts("(null)");
+		return (NULL);
+	}
 	_strcpy(sm, s);
 	return (sm);
 }

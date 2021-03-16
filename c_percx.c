@@ -9,6 +9,8 @@ char *c_percx(char fc)
 {
 	char *s = malloc(sizeof(char) * 3);
 
+	if (!s)
+		return (NULL);
 	s[0] = '%';
 	s[1] = fc;
 	s[2] = 00;

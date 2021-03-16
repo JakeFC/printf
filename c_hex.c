@@ -15,6 +15,8 @@ char *c_hex(va_list args)
 
 	d = "0123456789:;<=>?";
 	h = "0123456789abcdef";
+	if (!s)
+		return (NULL);
 	s[i] = 00;
 	if (n == 0)
 		s[++i] = 48;

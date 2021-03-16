@@ -12,6 +12,8 @@ int _printf(const char *format, ...)
 	int fi = 0, Ti, bi = 0, total = 0;
 	char *tmp, *buf = malloc(sizeof(char) * 1024);
 
+	if (!buf)
+		return (-1);
 	va_start(args, format);
 	if (!format)
 	{

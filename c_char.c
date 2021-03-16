@@ -13,6 +13,8 @@ char *c_char(va_list args)
 	if (!c)
 		return (NULL);
 	s = malloc(sizeof(char) * 2);
+	if (!s)
+		return (NULL);
 	s[0] = c;
 	s[1] = 00;
 	return (s);

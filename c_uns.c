@@ -12,6 +12,8 @@ char *c_uns(va_list args)
 	char tmp;
 	unsigned int n = va_arg(args, unsigned int);
 
+	if (!s)
+		return (NULL);
 	s[i] = 00;
 	if (n == 0)
 		s[++i] = 48;

@@ -10,6 +10,9 @@ char *c_ptr(va_list args)
 	char **pp = va_arg(args, void *);
 	char *s = malloc(sizeof(char) * 16);
 
+
+	if (!s)
+		return (NULL);
 	_strcpy(s, *pp);
 	return (s);
 }

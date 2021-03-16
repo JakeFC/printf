@@ -12,6 +12,8 @@ char *c_int(va_list args)
 	char tmp;
 	long int n;
 
+	if (!s)
+		return (NULL);
 	if (on < 0)
 	{
 		check = 1;

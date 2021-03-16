@@ -11,6 +11,8 @@ char *c_perc(va_list args)
 	(void)args;
 
 	s = malloc(sizeof(char) * 2);
+	if (!s)
+		return (NULL);
 	s[0] = '%';
 	s[1] = 00;
 	return (s);

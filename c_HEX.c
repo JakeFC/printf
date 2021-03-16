@@ -13,6 +13,8 @@ char *c_HEX(va_list args)
 	char tmp;
 	unsigned int n = va_arg(args, unsigned int);
 
+	if (!s)
+		return (NULL);
 	d = "0123456789:;<=>?";
 	h = "0123456789ABCDEF";
 	s[i] = 00;

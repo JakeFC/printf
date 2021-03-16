@@ -39,6 +39,8 @@ char *c_strung(va_list args)
 	if (!s)
 		return (NULL);
 	sm = malloc(sizeof(*s) * 4);
+	if (!sm)
+		return (NULL);
 	_strcpyx(sm, s);
 	return (sm);
 }

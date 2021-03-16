@@ -9,6 +9,8 @@ char *c_char2(char c)
 {
 	char *s = malloc(sizeof(char) * 2);
 
+	if (!s)
+		return (NULL);
 	s[0] = c;
 	s[1] = 00;
 	return (s);

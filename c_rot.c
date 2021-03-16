@@ -11,6 +11,8 @@ char *c_rot(va_list args)
 char *s = va_arg(args, char *);
 char *sm = malloc(sizeof(*s));
 
+if (!sm)
+return (NULL);
 _strcpy(sm, s);
 
 rot13(sm);
