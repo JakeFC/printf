@@ -19,12 +19,12 @@ int _printf(const char *format, ...)
 	if (!format)
 	{
 		cleanup(buf, args, bi);
-		free(buf);		
+		free(buf);
 		return (-1);
 	}
 	for (fi = 0; format[fi]; fi++)
-	  {
-	    if (format[fi] == '%')
+	{
+		if (format[fi] == '%')
 		{
 			tmp = c_sort(format, &fi, args);
 			if (!tmp)
@@ -44,7 +44,7 @@ int _printf(const char *format, ...)
 				write(1, buf, bi), bi = -1;
 		}
 		free(tmp);
-	  }
+	}
 	cleanup(buf, args, bi);
 	free(buf);
 	return (total);
