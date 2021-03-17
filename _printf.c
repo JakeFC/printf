@@ -12,17 +12,19 @@ int _printf(const char *format, ...)
 	int fi = 0, Ti, bi = 0, total = 0;
 	char *tmp, *buf = malloc(sizeof(char) * 1024);
 
+/* Ti (tmp index, Fi (format index), bi (buffer index)*/
 	if (!buf)
 		return (-1);
 	va_start(args, format);
 	if (!format)
 	{
 		cleanup(buf, args, bi);
+		free(buf);		
 		return (-1);
 	}
 	for (fi = 0; format[fi]; fi++)
-	{
-		if (format[fi] == '%')
+	  {
+	    if (format[fi] == '%')
 		{
 			tmp = c_sort(format, &fi, args);
 			if (!tmp)
@@ -32,6 +34,7 @@ int _printf(const char *format, ...)
 				return (-1);
 			}
 		}
+/*(to malloc and then free every string) -Line 47: prt buf, frees arg lsts*/
 		else
 			tmp = c_char2(format[fi]);
 		for (Ti = 0; tmp[Ti]; bi++, Ti++, total++)
@@ -41,13 +44,13 @@ int _printf(const char *format, ...)
 				write(1, buf, bi), bi = -1;
 		}
 		free(tmp);
-	}
+	  }
 	cleanup(buf, args, bi);
 	free(buf);
 	return (total);
 }
 /**
- * cleanup - writes and frees the buffer and ends the va_list
+ * cleanup - writes the buffer and ends the va_list
  * @buf: buffer pointer
  * @args: va list
  * @bi: current buffer index
