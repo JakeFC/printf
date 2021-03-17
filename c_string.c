@@ -25,15 +25,12 @@ char *c_string(va_list args)
 
 	if (!s)
 	{
-		_puts("(null)");
-		return (NULL);
+		s = malloc(sizeof(char) * 7);
+		s = "(null)";
 	}
 	sm = malloc(sizeof(*s));
 	if (!sm)
-	{
-		_puts("(null)");
-		return (NULL);
-	}
+		return (0);
 	_strcpy(sm, s);
 	return (sm);
 }
