@@ -7,7 +7,8 @@ printf - Print and format data to the standard output
 [\fB\-\-ARGUMENT\fR]
 .SH DESCRIPTION
 .B printf
-print a series of characters, commands, or variables based on input. The input you use will be converted into a string and then fed the corresponding data types. The string will then be transmogrified to fit the output's specifications.
+Print a string literal inserting the given argument in order whenever a specifier is found. The argument will be converted into a string and then fed the corresponding data \
+types. Returns the number of characters printed or a negative value on error. Input variable is declared via a "%" character.
 .SH
 .TP
 .BR \-b ", "\fR
@@ -19,7 +20,7 @@ Int is converted into signed decimal notation
 .SH
 .TP
 .BR \-o ", " \-u "," \-x ", " \-X ","\fR
-Int is converted into unsigned octal (o), unsigned decimal(u), or unsigned hexadecimal(x, X) notation. Capital letters are used in hex with the uppercase X.
+Unsigned int is converted into unsigned octal (o), unsigned decimal(u), or unsigned hexadecimal(x, X) notation. Capital letters are used in hex with the uppercase X.
 .SH
 .TP
 .BR \-p ", "\fR
@@ -35,7 +36,7 @@ String is converted into ROT13 encryption
 .SH
 .TP
 .BR \-S ", "\fR
-All ASCII values outside of 32 through 126 are converted to hex and output following a "\\x"
+All ASCII values outside of 32 through 126 are converted to hex and output following a "\x"
 .SH
 .TP
 .BR \-% ", "\fR
@@ -47,8 +48,8 @@ command:
 .PP
 .nf
 .RS
-printf "this is a %s format %s\n" \\
-womp womp womp
+printf("this is a string format: %s\\n", string);
+this is a string format: womp womp womp
 .RE
 .fi
 .PP
