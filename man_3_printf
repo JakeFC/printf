@@ -1,0 +1,64 @@
+.TH man_3_printf 1
+.SH NAME
+printf - Print and format data to the standard output
+.SH SYNOPSIS
+.B printf
+[\fB\-\-FORMAT\fR]
+[\fB\-\-ARGUMENT\fR]
+.SH DESCRIPTION
+.B printf
+Print a string literal inserting the given argument in order whenever a specifier is found. The argument will be converted into a string and then fed the corresponding data \
+types. Returns the number of characters printed or a negative value on error. Input variable is declared via a "%" character.
+.SH
+.TP
+.BR \-b ", "\fR
+Unsigned int is converted to binary
+.SH
+.TP
+.BR \-d ", " \-i ","\fR
+Int is converted into signed decimal notation
+.SH
+.TP
+.BR \-o ", " \-u "," \-x ", " \-X ","\fR
+Unsigned int is converted into unsigned octal (o), unsigned decimal(u), or unsigned hexadecimal(x, X) notation. Capital letters are used in hex with the uppercase X.
+.SH
+.TP
+.BR \-p ", "\fR
+Void * pointer argument is printed into hexadecimal
+.SH
+.TP
+.BR \-r ", "\fR
+String is printed in reverse
+.SH
+.TP
+.BR \-R ", "\fR
+String is converted into ROT13 encryption
+.SH
+.TP
+.BR \-S ", "\fR
+All ASCII values outside of 32 through 126 are converted to hex and output following a "\x"
+.SH
+.TP
+.BR \-% ", "\fR
+A "%" is written. Nothing is converted.
+.SH EXAMPLES
+To write some text to the standard output, use the
+.BR printf (1)
+command:
+.PP
+.nf
+.RS
+printf("this is a string format: %s\\n", string);
+this is a string format: womp womp womp
+.RE
+.fi
+.PP
+.SH AUTHORS
+.BR \ jacobchavera@yahoo.com\fR
+.PP
+.BR \ christopher.caswell@rocketmail.com\fR
+.SH COPYRIGHT
+.B None.
+.SH
+.TP
+Please don't steal. It's uncouth behavior.
