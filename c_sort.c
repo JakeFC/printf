@@ -31,6 +31,10 @@ char *c_sort(const char *format, int *fi, va_list args)
 	char flagseen[] = {0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0};
 
 	*fi += 1;
+	/*Flag and dereferenced format indicex start at 0*/
+	/*The flag index checks against the previously seen array*/
+	/*the Flag index continues onward until we see*/
+	/*letters that are utilized within the struct*/
 	for (Fi = 0, increments = 0; flag[Fi] && format[*fi]; Fi++)
 		if ((format[*fi] == flag[Fi]) && (flagseen[Fi] != '1'))
 		{
@@ -45,6 +49,8 @@ char *c_sort(const char *format, int *fi, va_list args)
 			tmp = type[ti].f(args);
 			return (tmp);
 		}
+	/*If we've gone through all Flags, prints input as string*/
+	/*if there was no string literal - prints NULL*/
 	*fi -= increments;
 	if (format[*fi] && format[*fi + increments])
 		return (c_percx(format[*fi]));
